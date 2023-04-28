@@ -1,4 +1,4 @@
-# 👋 Hi, I’m @flitzcore
+# 👋 Hi, I’m lock_rr
 
 I learn Computer Engineering in ITS. My favorite subject is Application Development, however i start to learn about Machine Learning, and Computer Vision. 
 
