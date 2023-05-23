@@ -1,6 +1,6 @@
 # 👋 Hi, I’m lock_rr
 
-I learn Computer Engineering in ITS. My favorite subject is Application Development, however i start to learn about Machine Learning, and Computer Vision. 
+[404 Error] Sleep not found
 
 <h2 align="center"> My Github Stats </h2>
 <br>
