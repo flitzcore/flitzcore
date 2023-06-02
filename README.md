@@ -2,7 +2,7 @@
 
 [404 Error] Sleep not found
 
-I'm skilled in developing IoT systems, software development using Flutter and Kotlin, web development with React, and proficient in backend development with Google Cloud. Possesses exceptional communication and leadership skills acquired through extensive project experience, participation in competitions, and serving as a lab assistant. Adept at collaborating with cross-functional teams to deliver innovative solutions and drive project success.
+I'm a Computer Engineer Major skilled in developing IoT systems, software development using Flutter and Kotlin, web development with React, and proficient in backend development with Google Cloud. Possesses exceptional communication and leadership skills acquired through extensive project experience, participation in competitions, and serving as a lab assistant. Adept at collaborating with cross-functional teams to deliver innovative solutions and drive project success.
 
 <h2 align="center"> My Github Stats </h2>
 <br>
