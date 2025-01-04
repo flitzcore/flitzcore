@@ -6,13 +6,16 @@ I'm a Computer Engineer exploring the realms of creativity and technology.
 
 ---
 
-<h2 align="center"> Daily Fun Tracker 🚀 </h2>
+<h2 align="center"> 🎉 Daily Fun Tracker 🚀 </h2>
 
 <div align="center">
   <p id="fun-counter" style="font-size: 24px; color: #4caf50;">
     Days of Fun and Learning: <strong>0</strong>
   </p>
-  <img src="https://img.shields.io/badge/Fun%20Level-100%25-brightgreen?style=for-the-badge" alt="Fun Level" />
+  <p id="fun-metric" style="font-size: 24px; color: #ff9800;">
+    Fun Metric: <strong>100%</strong>
+  </p>
+  <img src="https://img.shields.io/badge/Fun%20Level-Dynamic-brightgreen?style=for-the-badge" alt="Fun Level" />
 </div>
 
 ---
