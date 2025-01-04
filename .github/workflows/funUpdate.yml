@@ -1,0 +1,50 @@
+name: Update Fun Tracker
+
+on:
+  schedule:
+    - cron: '*/1 * * * *' # Runs every minute
+
+jobs:
+  update-fun-tracker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update Day Counter and Fun Metric
+        run: |
+          # Extract the current day count and fun metric
+          day_count=$(grep -oP '(?<=Days of Fun and Learning: <strong>)[0-9]+(?=</strong>)' README.md)
+          fun_metric=$(grep -oP '(?<=Fun Metric: <strong>)[0-9]+(?=%</strong>)' README.md)
+
+          # Get the current date
+          current_year=$(date +%Y)
+          current_day_of_year=$(date +%j)
+
+          # Reset counters if it's a new year
+          if [ "$current_day_of_year" -eq "1" ]; then
+            day_count=0
+            fun_metric=100
+          else
+            # Increment day count
+            day_count=$((day_count + 1))
+
+            # Reduce fun metric proportionally to days left in the year
+            days_left_in_year=$((365 - current_day_of_year))
+            fun_metric=$((fun_metric - 100 / days_left_in_year))
+            [ "$fun_metric" -lt 0 ] && fun_metric=0
+          fi
+
+          # Update the README.md file
+          sed -i "s/Days of Fun and Learning: <strong>[0-9]*<\/strong>/Days of Fun and Learning: <strong>$day_count<\/strong>/" README.md
+          sed -i "s/Fun Metric: <strong>[0-9]*%<\/strong>/Fun Metric: <strong>$fun_metric%<\/strong>/" README.md
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add README.md
+          git commit -m "Updated day count to $day_count and fun metric to $fun_metric%"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
